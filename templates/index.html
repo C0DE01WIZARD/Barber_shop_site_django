@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница Barbershop</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!--Добавление стиля-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'Title.png' %}">
+</head>
+
+<script>
+   function digitalClock() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+       //* добавление ведущих нулей */
+      if (hours < 10) hours = "0" + hours;
+      if (minutes < 10) minutes = "0" + minutes;
+      if (seconds < 10) seconds = "0" + seconds;
+        document.getElementById("id_clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+        setTimeout("digitalClock()", 1000);
+   }
+    </script>
+
+<body>
+<header>
+    <span class="right"> <span class="contact"><a href="/" title="Зарегистрироваться">Регистрация</a>
+      <span class="contact"><a href="/" title="Введите ваш логин и пароль">Вход</a>
+
+    <h4 id="description">BARBER GODS</h4>
+</header>
+
+<div id="menu"><br>
+        <center>
+            <div id="menu">Разделы сайта<br><br>
+                <a href="" id="menu">Новости</a>
+                 <a href="" id="menu">Записаться</a>
+                <a href="" id="menu">Акции</a>
+                <a href=""id="menu">Виды причесок</a>
+                <a href=""id="menu">Наши барберы</a>
+                <a href=""id="menu">Наши адреса</a>
+                <a href=""id="menu">Контакты</a>
+                <a href=""id="menu">Обратная связь</a>
+            </div>
+        </center>
+</div>
+{% block header %}
+
+ <div id="id_clock"></div>
+        <script>digitalClock();</script>
+<h4>Следите за временем чтобы не опоздать на приём</h4>
+
+
+
+<a href="/"><img src="{% static 'Иконка.jpg' %} " class="homephoto"></a><br>
+<div class="quotediv">
+<h8 class="quote">"Стрижка для нас это призвание, часть жизни и культуры.
+    Мужчины приходят к нам не только для того,
+    чтобы подровнять бороду, но и обрести неповторимый стиль"</h8>
+</div>
+
+
+<div class="quotediv2">
+
+<h8 class="quote"></h8>
+</div>
+{% endblock %}
+
+
+<footer>
+    <h3>Все права защищены &copy; 2023</h3>
+
+</footer>
+
+</body>
+</html>

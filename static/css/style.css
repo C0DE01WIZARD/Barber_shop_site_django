@@ -1,0 +1,104 @@
+html{height: 100%}
+
+/* HEADER. FOOTER*/
+header, footer {
+    border-radius: 10px;
+    border:0px solid black;
+    width: 99%; /*на весь экран*/
+    background-color:#38aafcdc; /* фон */
+    min-height: 96px; /*50 пикселей */
+    float: left;
+    margin-top: 10px;
+}
+
+.contact a {
+    font-size:18px;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin-left: 10px; /* левый отступ */
+    float: right;
+    margin-right:10px;
+
+    text-decoration: none;
+
+}
+
+.contact a:hover{
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    border-radius:5px;
+    text-decoration: none;
+    border: solid 1px black;
+}
+
+#description {
+    font-size:45px;
+    font-family: 'Bungee Shade';font-size: 52px;
+    color:black;
+    float: center;
+
+}
+
+/* HOME */
+
+.quote{
+    font-size:19px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color:black;
+    float: left;
+    border-radius:2px;
+
+}
+
+.quotediv{
+    float: left;
+    -webkit-box-flex: 55;
+    -ms-flex: 50%;
+    flex: 20%;
+    max-width: 30%;
+    margin-left: 10px;
+
+}
+
+
+.quotediv2{
+    float: left;
+    -webkit-box-flex: 155;
+    -ms-flex: 60%;
+    flex: 20%;
+    max-width: 30%;
+    margin-left: 10px;
+    padding-right: 200px;
+
+}
+
+
+
+
+#menu a{
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size:20px;
+    text-decoration: none;
+    border-left:20px;
+    background: red;
+    border-radius: 4px;
+    margin-left:40px;
+    border: solid 3px black;
+
+}
+
+#menu a:hover{
+    background:#38aafcdc;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size:20px;
+    text-decoration: none;
+
+
+
+}
+
+
+

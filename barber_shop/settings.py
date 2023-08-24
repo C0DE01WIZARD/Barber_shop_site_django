@@ -24,7 +24,8 @@ SECRET_KEY = '!*_=%bkf_aul4q=w88n5cleo^#9*j6*joa(w92mxw&l&xf75@v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['example.com', '127.0.0.1']
+ALLOWED_HOSTS = ['example.com', '0.0.0.0']
 
 # Application definition
 
@@ -76,8 +77,13 @@ WSGI_APPLICATION = 'barber_shop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser2',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
+
     }
 }
 
@@ -116,8 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_DIR = os.path.join(BASE_DIR, 'static/') # директория нашей статики
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')  # путь нахождения папки 'static'
+STATIC_DIRS = os.path.join(BASE_DIR, 'static/') # директория нашей статики
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')  # путь нахождения папки 'static'
 
 ]
+
+MEDIA_URL = '/media/' # добавляет префикс /media
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+SESSION_COOKIE_AGE = 30 * 24 * 60 * 60

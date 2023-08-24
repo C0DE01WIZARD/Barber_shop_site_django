@@ -1,7 +1,9 @@
 from django.urls import path
-from hair.views import news
+from hair.views import *
 
 urlpatterns = [
-    path('news/', news)
+    path('news/', news, name='news'),
+    path('records/',records, name='record')
+
 
 ]

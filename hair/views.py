@@ -10,9 +10,11 @@ def news(request):  # request
     return render(request, 'news.html')  # response
 
 
+def records(request):
+    return render(request, 'record.html')
+
 def index_page(request):  # request
-    admin = {'name': 'Рушан'}
-    all_hairs = Hairstyles.objects.all()  # получаем записи из таблицы
+    all_hairs = Barber.objects.all()  # получаем записи из таблицы
     return render(request, 'index.html', {'data': all_hairs})  # response
 
 

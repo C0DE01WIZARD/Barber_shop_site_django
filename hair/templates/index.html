@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Главная страница Barbershop</title>
+    {% block title %}<title>Главная страница Barbershop</title>{% endblock %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!--Добавление стиля-->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js"></script>
@@ -28,18 +28,19 @@
 
 <body>
 <header>
+    <a href="/"><h4 class="description">BARBER GODS</h4></a>
     <span class="right"> <span class="contact"><a href="/" title="Зарегистрироваться">Регистрация</a>
       <span class="contact"><a href="/" title="Введите ваш логин и пароль">Вход</a>
 
-    <h4 id="description">BARBER GODS</h4>
+
 </header>
 
 <div id="menu"><br>
         <center>
             <div id="menu">Разделы сайта<br><br>
-                <a href="" id="menu">Новости</a>
-                 <a href="" id="menu">Записаться</a>
-                <a href="" id="menu">Акции</a>
+                <a href="{% url 'news' %}" id="menu">Новости</a>
+                 <a href="{% url 'record' %}" id="menu">Записаться</a>
+                <a href="" id="menu">Акции</a><br><br>
                 <a href=""id="menu">Виды причесок</a>
                 <a href=""id="menu">Наши барберы</a>
                 <a href=""id="menu">Наши адреса</a>
@@ -55,19 +56,32 @@
 <h4>Следите за временем чтобы не опоздать на приём</h4>
 
 
+<div class align="center">
+<a href="http://0.0.0.1:9000/admin"><img src="{% static 'Иконка.jpg' %} " class="homephoto" align="center"></a><br>
 
-<a href="/"><img src="{% static 'Иконка.jpg' %} " class="homephoto"></a><br>
-<div class="quotediv">
-<h8 class="quote">"Стрижка для нас это призвание, часть жизни и культуры.
+<h3 class="quote">"Стрижка для нас это призвание, часть жизни и культуры.
     Мужчины приходят к нам не только для того,
-    чтобы подровнять бороду, но и обрести неповторимый стиль"</h8>
+    чтобы подровнять бороду, но и обрести неповторимый стиль"</h3>
+</div>
+
+<div class="row">
+    {% for i in data %}
+    <div class="col-md-4 product-men">
+        <a href="{% url 'record' %}"><img src="{{i.image.url}}" class="imgabout"></a>
+    </div>
+</div>
+    <div class="co">
+    <h3>{{i.name}}</h3>
+    <h4>Специализация:</h4>
+    <h5>{{i.types_hairstyle}}</h5>
+    <a href="{% url 'record' %}"><button><h3 align="center">Запись</h3></button></a>
+    {% endfor %}
+    </div>
+</div>
 </div>
 
 
-<div class="quotediv2">
 
-<h8 class="quote"></h8>
-</div>
 {% endblock %}
 
 

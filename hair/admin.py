@@ -6,3 +6,4 @@ from hair.models import *
 
 admin.site.register(Hairstyles)
 admin.site.register(Barber)
+admin.site.register(Records)

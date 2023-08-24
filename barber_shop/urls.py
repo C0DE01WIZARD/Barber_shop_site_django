@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import SimpleRouter
+from django.conf.urls.static import static
+from django.conf import settings
 
 from hair.views import index_page, Index_View, index_app
 
@@ -23,10 +25,10 @@ router = SimpleRouter()  # ПУТЬ ДЛЯ API
 router.register('api/hairs', Index_View)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', include('hair.urls')),
     path('', index_page),  # '' - переход на главную страницу
     path('index_app/', index_app)
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += router.urls

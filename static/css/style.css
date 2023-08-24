@@ -1,15 +1,29 @@
 html{height: 100%}
 
 /* HEADER. FOOTER*/
-header, footer {
+header {
     border-radius: 10px;
     border:0px solid black;
     width: 99%; /*на весь экран*/
-    background-color:#38aafcdc; /* фон */
+    background-color:#FFE4B5; /* фон */
     min-height: 96px; /*50 пикселей */
     float: left;
     margin-top: 10px;
+
 }
+
+footer {
+    border-radius: 10px;
+    border:0px solid black;
+    width: 99%; /*на весь экран*/
+    background-color:#FF4500; /* фон */
+    min-height: 96px; /*50 пикселей */
+    float: left;
+    margin-top: 520px;
+
+}
+
+
 
 .contact a {
     font-size:18px;
@@ -24,26 +38,27 @@ header, footer {
 }
 
 .contact a:hover{
-    font-size: 20px;
+    font-size: 18px;
     color: black;
     background-color: white;
     border-radius:5px;
     text-decoration: none;
-    border: solid 1px black;
+    border: solid 0px black;
 }
 
-#description {
-    font-size:45px;
-    font-family: 'Bungee Shade';font-size: 52px;
-    color:black;
-    float: center;
-
+.description{
+    font-family: 'Bungee Shade';
+    font-size: 60px;
+    color:#00008B;
+    margin-left:10px;
+    margin-top:28px;
+    text-decoration: none;
 }
 
 /* HOME */
 
 .quote{
-    font-size:19px;
+    font-size:39px;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     color:black;
     float: left;
@@ -58,31 +73,53 @@ header, footer {
     flex: 20%;
     max-width: 30%;
     margin-left: 10px;
-
-}
-
-
-.quotediv2{
-    float: left;
-    -webkit-box-flex: 155;
-    -ms-flex: 60%;
-    flex: 20%;
-    max-width: 30%;
-    margin-left: 10px;
-    padding-right: 200px;
-
+    margin-top:10px;
 }
 
 
 
+.row {
+
+}
+
+.col-md-4 {
+  width: 100%;
+  min-height: 1px;
+  padding-left: 90px;
+}
+
+.col-md-4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 20.333333%;
+    max-width: 15.333333%;
+}
+
+
+.col-md-4 a {
+    color:black;
+    border-radius:19px;
+}
+
+.col {
+    margin-left:60px;
+}
+
+#menu {
+    font-size:29px;
+    color: black;
+    font-family: 'Bungee Shade';
+
+
+}
 
 #menu a{
-    color: white;
-    font-family: Arial, sans-serif;
+    color: black;
+
     font-size:20px;
     text-decoration: none;
     border-left:20px;
-    background: red;
+    background:#87CEEB;
     border-radius: 4px;
     margin-left:40px;
     border: solid 3px black;
@@ -92,13 +129,29 @@ header, footer {
 #menu a:hover{
     background:#38aafcdc;
     color: black;
-    font-family: Arial, sans-serif;
+
     font-size:20px;
     text-decoration: none;
+}
+
+.homephoto{
+    width:1100px;
+    height:480px;
+
+
 
 
 
 }
 
+
+.imgabout{
+    width:100%;
+    margin-top:22px;
+    height:280px;
+    width: auto;
+    border: solid 1px black;
+    border-radius: 5px;
+}
 
 

@@ -11,7 +11,7 @@ class Hairstyles(models.Model):  # создаем модели для приче
 
 
 class Barber(models.Model):  # создаем модель для Барберов
-    name = models.CharField('Имя барбера', max_length=20, blank=False)
+    name = models.CharField('Ими барбера', max_length=20, blank=False)
     types_hairstyle = models.ForeignKey(Hairstyles, verbose_name='Тип прически', on_delete=models.CASCADE)
     image = models.ImageField('Выберите изображение', upload_to='images/')
 

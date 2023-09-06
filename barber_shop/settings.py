@@ -24,8 +24,7 @@ SECRET_KEY = '!*_=%bkf_aul4q=w88n5cleo^#9*j6*joa(w92mxw&l&xf75@v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['example.com', '127.0.0.1:8000']
-ALLOWED_HOSTS = ['example.com', '0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -75,17 +74,26 @@ WSGI_APPLICATION = 'barber_shop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'myproject',
+#         'USER': 'myprojectuser2',
+#         'PASSWORD': 'password',
+#         'HOST': '127.0.0.1',
+#         'PORT': 5432,
+#
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'myproject',
-        'USER': 'myprojectuser2',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '',
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -122,13 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_DIRS = os.path.join(BASE_DIR, 'static/') # директория нашей статики
+STATIC_DIRS = os.path.join(BASE_DIR, 'static/')  # директория нашей статики
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')  # путь нахождения папки 'static'
 
-]
+                    ]
 
-MEDIA_URL = '/media/' # добавляет префикс /media
+MEDIA_URL = '/media/'  # добавляет префикс /media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
 
 SESSION_COOKIE_AGE = 30 * 24 * 60 * 60

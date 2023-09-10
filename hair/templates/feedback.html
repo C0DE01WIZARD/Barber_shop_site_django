@@ -9,7 +9,7 @@
 <a href="http://127.0.0.1:8000/"><img src="{% static 'фон2.jpg' %} " class="homephoto2" align="center"></a>
         <form action="{% url 'feedback' %}" method="post"> <!--перенаправление url '' означает к какой форме мы должны обратиться -->
             {% csrf_token %} <!-- Защита формы от csrf атак, дублирующих сайтов, сопоставлением токенов -->
-            <div class="form-error">{{ form.non_field_errors }}</div>
+            <div class="form-error">{{ for1m.non_field_errors }}</div>
 
             {% for f in form %}
             <p><label class="formadd" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>

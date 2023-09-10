@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %}<title>Наша обра</title>{% endblock %}
+{% block header %}
+<div class="feedback_index">
+    {% for fb in fbr %}
+    Имя: {{ fb.name }}
+    Электронная почта: {{ fb.email }}<br>
+    Текст: {{ fb.text }}
+
+    <h4>Создано:{{ fb.time_create }}</h4>
+
+{% endfor %}
+</div>
+    {% endblock %}
